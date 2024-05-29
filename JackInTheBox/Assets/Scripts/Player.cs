@@ -11,9 +11,15 @@ public class Player : MonoBehaviour
     [SerializeField] private float _maxSpeed = 2.0f;
 
     [SerializeField] private float _jumpForce = 10.0f;
+    [SerializeField] private float _dashForce = 1.0f;
+    [SerializeField] private float _dashCD = 0.5f;
+
+    private float _dashStartTimer;
     private bool _doubleJumped;
     private bool _isGrounded;
     private bool _wallBounced;
+    private bool _isDashing;
+   
 
     //Health
 
@@ -49,7 +55,9 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+
         movementRun();
+        dashTimer();
     }
 
     //Collisions
@@ -63,7 +71,6 @@ public class Player : MonoBehaviour
             if(!_isGrounded && _wallBounced)
             {
                 wallBounce();
-
             }
         }
 
@@ -79,11 +86,15 @@ public class Player : MonoBehaviour
 
     void movementRun()
     {
-        _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
-
-        if (_rb.velocity.magnitude >= _maxSpeed)
+        if (!_isDashing)
         {
-            _rb.velocity = _rb.velocity.normalized * _maxSpeed;
+            _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
+
+            if (_rb.velocity.magnitude >= _maxSpeed)
+            {
+                _rb.velocity = _rb.velocity.normalized * _maxSpeed;
+            }
+       
         }
     }
 
@@ -93,19 +104,32 @@ public class Player : MonoBehaviour
         _isGrounded = false;
     }
 
-    private void dashSide() 
+    private void dashSide(int newRotation) 
     {
-        
+        transform.rotation = Quaternion.Euler(0,  newRotation, 0);
+        _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
+        _isDashing = true;
+        _dashStartTimer = Time.time;
     }
 
     private void dashDown() 
     {
-    
+        _rb.AddForce(-transform.up * _dashForce , ForceMode.Impulse);
+        _isDashing = true;
+        _dashStartTimer = Time.time;
     }
 
     private void wallBounce() 
     {
         _rb.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+    }
+
+    private void dashTimer() 
+    {
+        if(Time.time - _dashStartTimer >= _dashCD) 
+        {
+            _isDashing = false;
+        }
     }
 
     //Health
@@ -124,25 +148,27 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        _touchPressAction.performed += TouchPressed;
+        _touchPressAction.canceled += TouchPressed;
         _swipeAction.performed += SwipePerformed;
     }
 
     private void OnDisable()
     {
-        _touchPressAction.performed -= TouchPressed;
-
+        _touchPressAction.canceled -= TouchPressed;
+        _swipeAction.performed -= SwipePerformed;
     }
 
-        //Press (Jump)
+    //Press (Jump)
 
     private void TouchPressed(InputAction.CallbackContext context)
     {
-        if (_isGrounded)
+
+
+        if (_isGrounded && !_isDashing)
         {
             basicJump();
         }
-        else if (!_isGrounded && _doubleJumped)
+        else if (!_isGrounded && _doubleJumped && !_isDashing)
         {
             basicJump();
             _doubleJumped = false;
@@ -153,33 +179,39 @@ public class Player : MonoBehaviour
     private void SwipePerformed(InputAction.CallbackContext context) 
     {
         Vector2 swipeDelta = context.ReadValue<Vector2>();
+        float minSwipeDistance = 50f;
+        float maxSwipeDistance = 100f;
 
+        if(swipeDelta.magnitude > minSwipeDistance && swipeDelta.magnitude < maxSwipeDistance) 
+        {
             // Swipe up (PlaceHolder)
 
-        if (swipeDelta.y > Mathf.Abs(swipeDelta.x))
-        {
-            //Maybe Special
+            if (swipeDelta.y > Mathf.Abs(swipeDelta.x))
+            {
+                //Maybe Special
+            }
+
+                // Swipe down (Dash Down)
+
+            else if (swipeDelta.y < -Mathf.Abs(swipeDelta.x))
+            {
+                dashDown();
+            }
+
+                // Swipe right (Dash Right)
+
+            else if (swipeDelta.x > Mathf.Abs(swipeDelta.y))
+            {
+                dashSide(90);
+            }
+
+                // Swipe left (Dash Left)
+
+            else if (swipeDelta.x < -Mathf.Abs(swipeDelta.y))
+            {
+                dashSide(-90);
+            }
         }
 
-            // Swipe down (Dash Down)
-
-        else if (swipeDelta.y < -Mathf.Abs(swipeDelta.x))
-        {
-
-        }
-
-            // Swipe right (Dash Right)
-
-        else if (swipeDelta.x > Mathf.Abs(swipeDelta.y))
-        {
-            // Implementar ação para swipe para a direita, se necessário
-        }
-
-            // Swipe left (Dash Left)
-
-        else if (swipeDelta.x < -Mathf.Abs(swipeDelta.y))
-        {
-            // Implementar ação para swipe para a esquerda, se necessário
-        }
     }
 }
