@@ -238,6 +238,22 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 326536598763755822, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: _dashCD
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: _dashForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: _tapMaxDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3530913047494704776, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.971
