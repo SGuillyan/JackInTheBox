@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] Slider sliderBGM;
+
     void Start()
     {
-        
+        if(!PlayerPrefs.HasKey("volumeBGM"))
+        {
+            PlayerPrefs.SetFloat("volumeBGM", 0.5f);
+            SaveVolume();
+        }
+        else
+            LoadVolume();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeVolume(float volume)
     {
-        
+        AudioListener.volume = sliderBGM.value;
+        SaveVolume();
+    }
+
+    private void LoadVolume()
+    {
+        sliderBGM.value = PlayerPrefs.GetFloat("volumeBGM");
+    }
+
+    private void SaveVolume()
+    {
+        PlayerPrefs.SetFloat("volumeBGM", sliderBGM.value);
     }
 }
