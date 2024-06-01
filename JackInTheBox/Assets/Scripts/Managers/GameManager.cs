@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private static int _pointScore;
 
+    [SerializeField] private List<GameObject> roomsList;
+
     void Awake() 
     {
         if(instance == null) 
@@ -27,5 +29,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void roomRandomLoop() 
+    {
+        int randomIndex = Random.Range(0, roomsList.Count);
+
+        GameObject randomRoom = roomsList[randomIndex];
+
+        randomRoom.SetActive(true);
     }
 }

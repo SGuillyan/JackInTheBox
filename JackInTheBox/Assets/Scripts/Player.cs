@@ -38,9 +38,15 @@ public class Player : MonoBehaviour
 
     private Rigidbody _rb;
 
+    //Player Started
+
+    public bool playerStarted;
+
     void Awake()
     {
         //TouchActions Reference
+
+        playerStarted = false;
 
         _playerInput = GetComponent<PlayerInput>();
 
@@ -58,6 +64,7 @@ public class Player : MonoBehaviour
 
         movementRun();
         dashTimer();
+        startGame();
     }
 
     //Collisions
@@ -213,5 +220,13 @@ public class Player : MonoBehaviour
             }
         }
 
+    }
+
+    private void startGame() 
+    {
+        if(transform.position.y >= 1 && !playerStarted) 
+        {
+            playerStarted = true;
+        }
     }
 }
