@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2496339133222406108}
+  - component: {fileID: -2940687144813660167}
   m_Layer: 0
   m_Name: RoomJester
   m_TagString: Untagged
@@ -38,6 +39,20 @@ Transform:
   - {fileID: 1041142866949501429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2940687144813660167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8476760360526515592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ef98befde43fc4dbaeb320278ab6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 0.3
+  gameManager: {fileID: 0}
 --- !u!1001 &211881773558356087
 PrefabInstance:
   m_ObjectHideFlags: 0
