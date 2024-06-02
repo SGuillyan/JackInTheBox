@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
-using UnityEngine.UI;
 
 public class MenuButtons : MonoBehaviour
 {
     [SerializeField] GameObject settingsMenu;
-    [SerializeField] Slider sliderBGM;
 
     void Awake()
     {
@@ -23,18 +20,21 @@ public class MenuButtons : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("2Game");
+        Time.timeScale = 1;        
         ButtonClicked();
     }
 
-    public void SettingsMenu()
+    public void PauseGame()
     {
         settingsMenu.SetActive(true);
+        Time.timeScale = 0;
         ButtonClicked();
     }
 
     public void CloseSettingsMenu()
     {
         settingsMenu.SetActive(false);
+        Time.timeScale = 1;
         ButtonClicked();
     }
 
@@ -48,21 +48,5 @@ public class MenuButtons : MonoBehaviour
     {
         Debug.Log("Fechar programa");
         Application.Quit();
-    }
-
-    public void SetVolume(float volume)
-    {
-        AudioListener.volume = sliderBGM.value;
-        SaveVolume();
-    }
-
-    private void LoadVolume()
-    {
-        sliderBGM.value = PlayerPrefs.GetFloat("volumeBGM");
-    }
-
-    private void SaveVolume()
-    {
-        PlayerPrefs.SetFloat("volumeBGM", sliderBGM.value);
     }
 }
