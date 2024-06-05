@@ -175,13 +175,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3530913047494704776}
-  - component: {fileID: 1503957391612753339}
   - component: {fileID: 326536598763755822}
+  - component: {fileID: 1503957391612753339}
+  - component: {fileID: 3318816541524514526}
   - component: {fileID: 8441674367217812524}
   - component: {fileID: 2519943039532964785}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,27 +204,6 @@ Transform:
   - {fileID: 8071632536470135745}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1503957391612753339
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8667561868824933382}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.33288693, y: 0.2958631, z: 0.41845852}
-  m_Center: {x: -0.0031434298, y: 0.0031434298, z: 0.058154136}
 --- !u!54 &326536598763755822
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -251,6 +231,48 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 88
   m_CollisionDetection: 1
+--- !u!65 &1503957391612753339
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8667561868824933382}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3016617, y: 0.27539074, z: 0.40128514}
+  m_Center: {x: 0.002060786, y: 0.013379604, z: 0.049567416}
+--- !u!65 &3318816541524514526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8667561868824933382}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.30090138, y: 0.3010093, z: 0.30138576}
+  m_Center: {x: -0.0008673817, y: -0.0009212792, z: 0.00070753694}
 --- !u!114 &8441674367217812524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,14 +306,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0c7ff741-ed06-4632-8715-1d275303664e
     m_ActionName: Player/SwipeRight
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 53673b67-6147-4d6f-a10f-c7ef537ac06f
-    m_ActionName: Player/SwipeLeft
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 04e371a7-b380-4c88-b0c4-49320cc9ec98
-    m_ActionName: Player/SwipeDown
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -312,5 +326,9 @@ MonoBehaviour:
   _aceleration: 20
   _maxSpeed: 2
   _jumpForce: 15
+  _dashForce: 1
+  _dashCD: 0.5
+  _isDashing: 0
   _currentHealth: 0
   _maxHealth: 10
+  playerStarted: 0

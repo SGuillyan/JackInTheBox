@@ -2094,6 +2094,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 855997425154942878, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3110539786757215794, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
       propertyPath: m_Name
       value: RoomStart
