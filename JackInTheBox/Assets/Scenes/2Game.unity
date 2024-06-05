@@ -544,6 +544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 755de87f74c819043aced5a8d192da62, type: 2}
+  sliderBGM: {fileID: 1440749254}
+  sliderSFX: {fileID: 563868049}
 --- !u!4 &213205253
 Transform:
   m_ObjectHideFlags: 0
@@ -937,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd89eef969253042a61395547449ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxObject: {fileID: 8283762272146247770, guid: f9cc1436e1caf7f41b1f0615d0a6ebb4, type: 3}
+  sfxSource: {fileID: 8283762272146247770, guid: f9cc1436e1caf7f41b1f0615d0a6ebb4, type: 3}
 --- !u!1 &563868047
 GameObject:
   m_ObjectHideFlags: 0

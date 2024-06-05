@@ -6,7 +6,7 @@ public class SFXPlayer : MonoBehaviour
 {
     public static SFXPlayer instance;
 
-    [SerializeField] private AudioSource sfxObject;
+    [SerializeField] private AudioSource sfxSource;
 
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class SFXPlayer : MonoBehaviour
     {
         int rand = Random.Range(0,audioClip.Length);
 
-        AudioSource audioSource = Instantiate(sfxObject, spawnTransform.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(sfxSource, spawnTransform.position, Quaternion.identity);
 
         audioSource.clip = audioClip[rand];
         
@@ -33,7 +33,7 @@ public class SFXPlayer : MonoBehaviour
 
     public void PlaySFX(AudioClip audioClip, Transform spawnTransform, float volume)
     {
-        AudioSource audioSource = Instantiate(sfxObject, spawnTransform.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(sfxSource, spawnTransform.position, Quaternion.identity);
 
         audioSource.clip = audioClip;
         audioSource.volume = volume;
