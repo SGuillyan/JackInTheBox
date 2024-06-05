@@ -42,6 +42,10 @@ public class Player : MonoBehaviour
 
     public bool playerStarted;
 
+    //SFX
+
+    [SerializeField] private AudioClip[] jumpSoundClips;
+
     void Awake()
     {
         //TouchActions Reference
@@ -57,11 +61,11 @@ public class Player : MonoBehaviour
 
         _rb = GetComponent<Rigidbody>();
         _currentHealth = _maxHealth;
+
     }
 
     void FixedUpdate()
     {
-
         movementRun();
         dashTimer();
         startGame();
@@ -109,6 +113,8 @@ public class Player : MonoBehaviour
     {
         _rb.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
         _isGrounded = false;
+
+        SFXPlayer.instance.PlayRandomSFX(jumpSoundClips, transform, 1f);
     }
 
     private void dashSide(int newRotation) 
@@ -169,8 +175,6 @@ public class Player : MonoBehaviour
 
     private void TouchPressed(InputAction.CallbackContext context)
     {
-
-
         if (_isGrounded && !_isDashing)
         {
             basicJump();
@@ -219,7 +223,6 @@ public class Player : MonoBehaviour
                 dashSide(-90);
             }
         }
-
     }
 
     private void startGame() 
