@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private bool _doubleJumped;
     private bool _isGrounded;
     private bool _wallBounced;
-    private bool _isDashing;
+    public bool _isDashing;
    
 
     //Health

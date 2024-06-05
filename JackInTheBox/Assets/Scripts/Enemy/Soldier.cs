@@ -4,29 +4,36 @@ using UnityEngine;
 
 public class Soldier : MonoBehaviour
 {
+    //Moviment
+
     [SerializeField] private float _aceleration = 20.0f;
     [SerializeField] private float _maxSpeed = 2.0f;
 
-    private Player _player;
+    private bool _isCharging;
+    private bool _isDead;
 
-    private bool _isDashing;
+    //References
 
     private Rigidbody _rb;
+    private Player _player;
+    private BoxCollider _boxCollider;
 
     void Awake()
     {
-
-
         GameObject playerGameObject = GameObject.Find("Player");
+
         if (playerGameObject != null)
         {
             _player = playerGameObject.GetComponent<Player>();
         }
 
         _rb = GetComponent<Rigidbody>();
+        _boxCollider = GetComponent<BoxCollider>();
+    }
 
-        _isDashing = false;
-
+    void Start()
+    {
+        startLoop();
     }
 
     void FixedUpdate()
@@ -34,9 +41,11 @@ public class Soldier : MonoBehaviour
         movementRun();
     }
 
+    //Moviment
+
     void movementRun()
     {
-        if (!_isDashing)
+        if (!_isCharging && !_isDead)
         {
             _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
 
@@ -48,15 +57,41 @@ public class Soldier : MonoBehaviour
         }
     }
 
+    //Collisions
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            _player.takeDamage(5);
+            if (_player._isDashing)
+            {
+                deathLoop();
+            }
+            else
+            {
+                _player.takeDamage(3);
+            }
         }
         if (other.gameObject.tag == "PlataformWall")
         {
             transform.Rotate(Vector3.up * 180f);
         }
+    }
+
+    //State Loops
+
+    void deathLoop()
+    {
+        _rb.isKinematic = true;
+        _boxCollider.enabled = false;
+        _isDead = true;
+    }
+
+    void startLoop()
+    {
+        _rb.isKinematic = false;
+        _boxCollider.enabled = true;
+        _isDead = false;
+        _isCharging = false;
     }
 }
