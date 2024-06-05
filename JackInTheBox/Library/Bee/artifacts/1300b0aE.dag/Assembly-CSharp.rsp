@@ -364,6 +364,7 @@
 "Assets/Scripts/Managers/Room.cs"
 "Assets/Scripts/Managers/SoundManager.cs"
 "Assets/Scripts/Managers/StartingRoom.cs"
+"Assets/Scripts/Music/SFXPlayer.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/UI/MenuButtons.cs"
 -langversion:9.0
