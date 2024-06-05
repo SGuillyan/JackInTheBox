@@ -9,21 +9,31 @@ public class SoundMixerManager : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] Slider sliderBGM;
     [SerializeField] Slider sliderSFX;
+    
+    private float _standartVolume = Mathf.Log10(0.4f) * 20f;
 
     void Start()
     {
         if(!PlayerPrefs.HasKey("BGMVolume"))
         {
-            PlayerPrefs.SetFloat("BGMVolume", Mathf.Log10(0.4f) * 20f);
-        } else{
+            PlayerPrefs.SetFloat("BGMVolume", _standartVolume);
+        //    sliderBGM.value = _standartVolume;
+        } 
+        else
+        {
             LoadVolumeBGM();
+        //    sliderBGM.value = PlayerPrefs.GetFloat("BGMValue");
         }
         
         if(!PlayerPrefs.HasKey("SFXVolume"))
         {
-            PlayerPrefs.SetFloat("SFXVolume", Mathf.Log10(0.4f) * 20f);
-        } else{
+            PlayerPrefs.SetFloat("SFXVolume", _standartVolume);
+        //    sliderSFX.value = _standartVolume;
+        }
+        else
+        {
             LoadVolumeSFX();
+        //    sliderSFX.value = PlayerPrefs.GetFloat("SFXValue");
         }
     }
 
@@ -31,6 +41,7 @@ public class SoundMixerManager : MonoBehaviour
     {
         //Mathf.Log10(level) * 20f is responsible for properly set the volume change in a linear way
         float volume = Mathf.Log10(level) * 20f;
+
         audioMixer.SetFloat("SFXVolume", volume);
         SaveVolumeSFX(volume);
     }
@@ -38,6 +49,7 @@ public class SoundMixerManager : MonoBehaviour
     public void SetBGMVolume(float level)
     {
         float volume = Mathf.Log10(level) * 20f;
+        
         audioMixer.SetFloat("BGMVolume", volume);
         SaveVolumeBGM(volume);
     }

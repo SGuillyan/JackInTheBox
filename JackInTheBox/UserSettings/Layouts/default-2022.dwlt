@@ -178,7 +178,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 126
+  controlID: 128
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -598,7 +598,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Music
+    - Assets/Scripts/Music
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -606,15 +606,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Music
+  - Assets/Scripts/Music
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\jorda\OneDrive\Documents\TI 2\JackInTheBox
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 12650000
-    m_LastClickedID: 25874
+    m_SelectedIDs: 20650000
+    m_LastClickedID: 25888
     m_ExpandedIDs: 00000000b2640000b4640000b6640000b8640000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -740,7 +740,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 111
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -783,9 +783,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ca5c0000
-      m_LastClickedID: 23754
-      m_ExpandedIDs: caf1ffff2afbffffca5c00009a5d0000
+      m_SelectedIDs: 4c5c0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1efbfffff4ffffffca5c00009a5d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
