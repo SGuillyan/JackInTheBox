@@ -6,11 +6,11 @@ public class StartingRoom : MonoBehaviour
 {
     [SerializeField] private float _speed = 0.3f;
 
-    public GameManager gameManager;
+    private GameManager _gameManager;
 
     void Awake() 
     {
-        gameManager = FindObjectOfType<GameManager>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
 
@@ -36,7 +36,7 @@ public class StartingRoom : MonoBehaviour
         if (transform.position.y <= -4.7)
         {
             deactivateRoom();
-            gameManager.roomRandomLoop();
+            _gameManager.roomRandomLoop();
         }
     }
 
