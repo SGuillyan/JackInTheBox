@@ -14,34 +14,34 @@ public class MenuButtons : MonoBehaviour
 
     private void ButtonClicked()
     {
-        //SoundManager.instance.PlaySFX(0);
+
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene("2Game");
         Time.timeScale = 1;        
-        ButtonClicked();
+    //    ButtonClicked();
     }
 
     public void PauseGame()
     {
         settingsMenu.SetActive(true);
         Time.timeScale = 0;
-        ButtonClicked();
+    //    ButtonClicked();
     }
 
     public void CloseSettingsMenu()
     {
         settingsMenu.SetActive(false);
         Time.timeScale = 1;
-        ButtonClicked();
+    //    ButtonClicked();
     }
 
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("1MainMenu");
-        ButtonClicked();
+    //    ButtonClicked();
     }
 
     public void QuitGame()
