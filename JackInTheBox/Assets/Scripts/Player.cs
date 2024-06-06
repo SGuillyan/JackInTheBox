@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
 
     private InputAction _swipeAction;
 
+    private GameManager _gameManager;
+
     //Physics
 
     private Rigidbody _rb;
@@ -61,6 +63,8 @@ public class Player : MonoBehaviour
 
         _rb = GetComponent<Rigidbody>();
         _currentHealth = _maxHealth;
+
+        _gameManager = FindObjectOfType<GameManager>();
 
     }
 
@@ -150,6 +154,10 @@ public class Player : MonoBehaviour
     public void takeDamage(int damageAmmount)
     {
         _currentHealth -= damageAmmount;
+        if(_currentHealth <= 0) 
+        {
+            _gameManager.loadGameOver();
+        }
     }
 
     void healPlayer(int healAmmount)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,15 +22,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);        
         }
     }
-    void Start()
-    {
-        
-    }
 
-    void Update()
-    {
-        
-    }
+    //Random Room Loop
 
     public void roomRandomLoop() 
     {
@@ -38,5 +32,12 @@ public class GameManager : MonoBehaviour
         GameObject randomRoom = roomsList[randomIndex];
 
         randomRoom.SetActive(true);
+    }
+
+    //Scenes Manager
+
+    public void loadGameOver() 
+    {
+        SceneManager.LoadScene("3GameOver");
     }
 }
