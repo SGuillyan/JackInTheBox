@@ -47,6 +47,9 @@ public class Player : MonoBehaviour
     //SFX
 
     [SerializeField] private AudioClip[] jumpSoundClips;
+    [SerializeField] private AudioClip[] dashSoundClips;
+    [SerializeField] private AudioClip landSoundClip;
+    [SerializeField] private AudioClip wallClingSoundClip;
 
     void Awake()
     {
@@ -85,6 +88,7 @@ public class Player : MonoBehaviour
 
             if(!_isGrounded && _wallBounced)
             {
+                SFXPlayer.instance.PlaySFX(wallClingSoundClip, transform, 1f);                
                 wallBounce();
             }
         }
@@ -94,6 +98,7 @@ public class Player : MonoBehaviour
             _isGrounded = true;
             _doubleJumped = true;
             _wallBounced = true;
+            SFXPlayer.instance.PlaySFX(landSoundClip, transform, 1f);
         }
     }
 
@@ -127,6 +132,7 @@ public class Player : MonoBehaviour
         _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
         _isDashing = true;
         _dashStartTimer = Time.time;
+        SFXPlayer.instance.PlayRandomSFX(dashSoundClips, transform, 1f);
     }
 
     private void dashDown() 

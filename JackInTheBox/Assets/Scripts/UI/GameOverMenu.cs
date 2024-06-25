@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-    
     public void StartGame()
     {
         SceneManager.LoadScene("2Game");

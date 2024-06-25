@@ -1229,13 +1229,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 087993d12d81ff54bab9ca8b4bc68bca, type: 3}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: landSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bcc67e8f0b403fb44bee70a58adf1528, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: _tapMaxDuration
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: wallClingSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 34a9e7840a57bbf4385c54dd3984be60, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: dashSoundClips.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: jumpSoundClips.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: dashSoundClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9fb11de2c62c8eb4abda70a605235fbf, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: dashSoundClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 77030e1715f03cf4da82f8c5aa79d545, type: 3}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: jumpSoundClips.Array.data[0]
       value: 
@@ -2172,6 +2192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 498257994498823222, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 855997425154942878, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
