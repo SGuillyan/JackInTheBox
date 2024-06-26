@@ -132,7 +132,8 @@ public class Player : MonoBehaviour
         _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
         _isDashing = true;
         _dashStartTimer = Time.time;
-        SFXPlayer.instance.PlayRandomSFX(dashSoundClips, transform, 1f);
+        
+        //SFXPlayer.instance.PlayRandomSFX(dashSoundClips, transform, 1f);        
     }
 
     private void dashDown() 
@@ -227,7 +228,7 @@ public class Player : MonoBehaviour
 
             else if (swipeDelta.x > Mathf.Abs(swipeDelta.y))
             {
-                dashSide(90);
+                dashSide(90);            
             }
 
                 // Swipe left (Dash Left)
