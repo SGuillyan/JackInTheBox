@@ -8,20 +8,18 @@ public class StartingRoom : MonoBehaviour
 
     private GameManager _gameManager;
 
-    void Awake() 
-    {
-        _gameManager = FindObjectOfType<GameManager>();
-    }
-
-
     void Start()
     {
+        _gameManager = GameManager.instance;
     }
 
     void FixedUpdate()
     {
-        verticalMovement();
-        verifyPosition();
+        if (_gameManager.PlayerStarted)
+        {
+            verticalMovement();
+            verifyPosition();
+        }
     }
 
     void verticalMovement()

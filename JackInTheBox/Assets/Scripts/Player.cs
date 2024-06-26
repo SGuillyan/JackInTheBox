@@ -67,8 +67,12 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _currentHealth = _maxHealth;
 
-        _gameManager = FindObjectOfType<GameManager>();
 
+    }
+
+    void Start() 
+    {
+        _gameManager = GameManager.instance;        
     }
 
     void FixedUpdate()
@@ -76,6 +80,7 @@ public class Player : MonoBehaviour
         movementRun();
         dashTimer();
         startGame();
+        verifyStart();
     }
 
     //Collisions
@@ -153,6 +158,14 @@ public class Player : MonoBehaviour
         if(Time.time - _dashStartTimer >= _dashCD) 
         {
             _isDashing = false;
+        }
+    }
+
+    private void verifyStart() 
+    {
+        if(transform.position.y > 0) 
+        {
+            _gameManager.startRoomLoop();
         }
     }
 

@@ -6,11 +6,11 @@ public class Room : MonoBehaviour
 {
     [SerializeField] private float _speed = 0.3f;
 
-    public GameManager gameManager;
+    private GameManager _gameManager;
 
-    void Awake() 
+    void Start() 
     {
-        gameManager = FindObjectOfType<GameManager>();
+        _gameManager = GameManager.instance;
     }
 
     void OnEnable()
@@ -20,8 +20,11 @@ public class Room : MonoBehaviour
 
     void FixedUpdate()
     {
-        verticalMovement();
-        verifyPosition();
+        if (_gameManager.PlayerStarted) 
+        {
+            verticalMovement();
+            verifyPosition();
+        }
     }
 
     void OnDisable() 
@@ -40,7 +43,7 @@ public class Room : MonoBehaviour
     {
         if(transform.position.y <= -4.7) 
         {
-            gameManager.roomRandomLoop();
+            _gameManager.roomRandomLoop();
             deactivateRoom();
         }
     }
