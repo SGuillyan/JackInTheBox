@@ -40,10 +40,6 @@ public class Player : MonoBehaviour
 
     private Rigidbody _rb;
 
-    //Player Started
-
-    public bool playerStarted;
-
     //SFX
 
     [SerializeField] private AudioClip[] jumpSoundClips;
@@ -54,8 +50,6 @@ public class Player : MonoBehaviour
     void Awake()
     {
         //TouchActions Reference
-
-        playerStarted = false;
 
         _playerInput = GetComponent<PlayerInput>();
 
@@ -79,7 +73,6 @@ public class Player : MonoBehaviour
     {
         movementRun();
         dashTimer();
-        startGame();
         verifyStart();
     }
 
@@ -89,7 +82,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            transform.Rotate(Vector3.up * 180f);
+            wallRotation();
 
             if(!_isGrounded && _wallBounced)
             {
@@ -168,6 +161,14 @@ public class Player : MonoBehaviour
             _gameManager.startRoomLoop();
         }
     }
+
+    private void wallRotation()
+    {
+        Vector3 _newRotation = transform.rotation.eulerAngles;
+        _newRotation *= -1;
+        transform.rotation = Quaternion.Euler(_newRotation);
+    }
+
 
     //Health
 
@@ -250,14 +251,6 @@ public class Player : MonoBehaviour
             {
                 dashSide(-90);
             }
-        }
-    }
-
-    private void startGame() 
-    {
-        if(transform.position.y >= 1 && !playerStarted) 
-        {
-            playerStarted = true;
         }
     }
 }

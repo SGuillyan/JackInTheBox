@@ -36,6 +36,11 @@ public class Minotaur : MonoBehaviour
         startLoop();
     }
 
+    void OnEnable() 
+    {
+        startLoop();
+    }
+
     void FixedUpdate()
     {
         movementRun();
@@ -74,8 +79,17 @@ public class Minotaur : MonoBehaviour
         }
         if (other.gameObject.tag == "PlataformWall")
         {
-            transform.Rotate(Vector3.up * 180f);
+            wallRotation();
         }
+    }
+
+    //Interactions
+
+    private void wallRotation() 
+    {
+        Vector3 _newRotation = transform.rotation.eulerAngles;
+        _newRotation *= -1;
+        transform.rotation = Quaternion.Euler(_newRotation);
     }
 
     //State Loops
@@ -89,7 +103,7 @@ public class Minotaur : MonoBehaviour
 
     void startLoop() 
     {
-        _rb.isKinematic = true;
+        _rb.isKinematic = false;
         _boxCollider.enabled = true;
         _isDead = false;
         _isCharging = false;
