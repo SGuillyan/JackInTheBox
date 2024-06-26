@@ -345,6 +345,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5408003897624612186, guid: 8dabbf10651831b428d8b9691eee32ea, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 5536411524940112787, guid: 8dabbf10651831b428d8b9691eee32ea, type: 3}
       propertyPath: m_Name
       value: RoomNormalEnemys
@@ -579,6 +583,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2933582842557321643, guid: 4f0a96c4877efdf468e7a46be27c6dc4, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 2496339133222406108, guid: 4f0a96c4877efdf468e7a46be27c6dc4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -685,6 +693,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6168048452609902844, guid: f2a5b64fb0d5e5f44b0a6bbcb7322b5e, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 7239910131573152371, guid: f2a5b64fb0d5e5f44b0a6bbcb7322b5e, type: 3}
       propertyPath: m_Name
       value: RoomMinotaur (1)
@@ -706,6 +718,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2933582842557321643, guid: 4f0a96c4877efdf468e7a46be27c6dc4, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 2496339133222406108, guid: 4f0a96c4877efdf468e7a46be27c6dc4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -767,6 +783,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8532926935672661810, guid: ae50ae3cf287d52418e7320420cf886b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 4155108330285590262, guid: ae50ae3cf287d52418e7320420cf886b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -1488,6 +1508,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6168048452609902844, guid: f2a5b64fb0d5e5f44b0a6bbcb7322b5e, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 7239910131573152371, guid: f2a5b64fb0d5e5f44b0a6bbcb7322b5e, type: 3}
       propertyPath: m_Name
       value: RoomMinotaur
@@ -1712,6 +1736,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5408003897624612186, guid: 8dabbf10651831b428d8b9691eee32ea, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 5536411524940112787, guid: 8dabbf10651831b428d8b9691eee32ea, type: 3}
       propertyPath: m_Name
       value: RoomNormalEnemys (2)
@@ -2018,6 +2046,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6168048452609902844, guid: f2a5b64fb0d5e5f44b0a6bbcb7322b5e, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 7239910131573152371, guid: f2a5b64fb0d5e5f44b0a6bbcb7322b5e, type: 3}
       propertyPath: m_Name
       value: RoomMinotaur (2)
@@ -2131,6 +2163,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5408003897624612186, guid: 8dabbf10651831b428d8b9691eee32ea, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 5536411524940112787, guid: 8dabbf10651831b428d8b9691eee32ea, type: 3}
       propertyPath: m_Name
       value: RoomNormalEnemys (1)
@@ -2706,6 +2742,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8532926935672661810, guid: ae50ae3cf287d52418e7320420cf886b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 4155108330285590262, guid: ae50ae3cf287d52418e7320420cf886b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -3357,6 +3397,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8532926935672661810, guid: ae50ae3cf287d52418e7320420cf886b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 4155108330285590262, guid: ae50ae3cf287d52418e7320420cf886b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -3526,6 +3570,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2933582842557321643, guid: 4f0a96c4877efdf468e7a46be27c6dc4, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1892289016}
     - target: {fileID: 2496339133222406108, guid: 4f0a96c4877efdf468e7a46be27c6dc4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4

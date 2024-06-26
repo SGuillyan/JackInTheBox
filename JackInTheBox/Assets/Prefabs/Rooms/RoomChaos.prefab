@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4155108330285590262}
-  - component: {fileID: 891152504387540985}
+  - component: {fileID: -8532926935672661810}
   m_Layer: 0
   m_Name: RoomChaos
   m_TagString: Untagged
@@ -105,7 +105,7 @@ Transform:
   - {fileID: 8103564882559940844}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &891152504387540985
+--- !u!114 &-8532926935672661810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

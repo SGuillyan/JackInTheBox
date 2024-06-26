@@ -80,7 +80,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6133494657854734903}
-  - component: {fileID: 461310886127650349}
+  - component: {fileID: 5408003897624612186}
   m_Layer: 0
   m_Name: RoomNormalEnemys
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Transform:
   - {fileID: 8642142570252333559}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &461310886127650349
+--- !u!114 &5408003897624612186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

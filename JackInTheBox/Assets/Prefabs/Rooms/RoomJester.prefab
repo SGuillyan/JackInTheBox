@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2496339133222406108}
-  - component: {fileID: -2940687144813660167}
+  - component: {fileID: -2933582842557321643}
   m_Layer: 0
   m_Name: RoomJester
   m_TagString: Untagged
@@ -39,7 +39,7 @@ Transform:
   - {fileID: 1041142866949501429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2940687144813660167
+--- !u!114 &-2933582842557321643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
