@@ -27,11 +27,21 @@ public class GameManager : MonoBehaviour
 
     public void roomRandomLoop() 
     {
-        int randomIndex = Random.Range(0, roomsList.Count);
+        bool foundInactiveRoom = false;
+        int randomIndex = 0;
 
-        GameObject randomRoom = roomsList[randomIndex];
+        while(!foundInactiveRoom)
+        {
+            randomIndex = Random.Range(0, roomsList.Count);
+            GameObject randomRoom = roomsList[randomIndex];
 
-        randomRoom.SetActive(true);
+            if (!randomRoom.activeSelf) 
+            {
+                randomRoom.SetActive(true);
+                foundInactiveRoom = true;
+            }
+        }
+
     }
 
     //Scenes Manager

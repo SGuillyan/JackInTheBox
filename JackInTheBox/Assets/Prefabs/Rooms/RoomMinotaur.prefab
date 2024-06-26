@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3575126981116412153}
-  - component: {fileID: 669850289788004193}
+  - component: {fileID: 6168048452609902844}
   m_Layer: 0
   m_Name: RoomMinotaur
   m_TagString: Untagged
@@ -69,7 +69,7 @@ Transform:
   - {fileID: 6670764166764784258}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &669850289788004193
+--- !u!114 &6168048452609902844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

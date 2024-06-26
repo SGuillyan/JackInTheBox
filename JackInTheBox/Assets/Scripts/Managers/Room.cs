@@ -13,7 +13,7 @@ public class Room : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    void Start()
+    void OnEnable()
     {
         transform.position = new Vector3(0, 4.7f, 0);
     }
@@ -22,6 +22,11 @@ public class Room : MonoBehaviour
     {
         verticalMovement();
         verifyPosition();
+    }
+
+    void OnDisable() 
+    {
+        transform.position = new Vector3(4, 0, 0);        
     }
 
     void verticalMovement()
@@ -42,7 +47,6 @@ public class Room : MonoBehaviour
 
     void deactivateRoom() 
     {
-        transform.position = new Vector3(4, 0, 0);
         gameObject.SetActive(false);
     }
 }
