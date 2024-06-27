@@ -47,6 +47,11 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip landSoundClip;
     [SerializeField] private AudioClip wallClingSoundClip;
 
+    //VFX
+
+    private VFXPlayer _vfxPlayer;
+    [SerializeField] private GameObject hitVFX;
+
     void Awake()
     {
         //TouchActions Reference
@@ -66,7 +71,9 @@ public class Player : MonoBehaviour
 
     void Start() 
     {
-        _gameManager = GameManager.instance;        
+        _gameManager = GameManager.instance;
+        _vfxPlayer = VFXPlayer.instance;
+
     }
 
     void FixedUpdate()
@@ -86,7 +93,7 @@ public class Player : MonoBehaviour
 
             if(!_isGrounded && _wallBounced)
             {
-                SFXPlayer.instance.PlaySFX(wallClingSoundClip, transform, 1f);                
+                SFXPlayer.instance.PlaySFX(wallClingSoundClip, transform, 1f);
                 wallBounce();
             }
         }
