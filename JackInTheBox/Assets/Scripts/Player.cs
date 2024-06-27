@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     //SFX
 
     [SerializeField] private AudioClip[] jumpSoundClips;
-    [SerializeField] private AudioClip[] dashSoundClips;
+    [SerializeField] private AudioClip[] hitSoundClips;
     [SerializeField] private AudioClip landSoundClip;
     [SerializeField] private AudioClip wallClingSoundClip;
 
@@ -137,8 +137,6 @@ public class Player : MonoBehaviour
         _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
         _isDashing = true;
         _dashStartTimer = Time.time;
-        
-        //SFXPlayer.instance.PlayRandomSFX(dashSoundClips, transform, 1f);        
     }
 
     private void dashDown() 
@@ -182,6 +180,9 @@ public class Player : MonoBehaviour
     public void takeDamage(int damageAmmount)
     {
         _currentHealth -= damageAmmount;
+        
+        SFXPlayer.instance.PlayRandomSFX(hitSoundClips, transform, 1f);
+
         if(_currentHealth <= 0) 
         {
             _gameManager.loadGameOver();
