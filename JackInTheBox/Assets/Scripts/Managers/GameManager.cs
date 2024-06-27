@@ -8,10 +8,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private static int _pointScore;
 
+    public bool PlayerStarted;
+
     [SerializeField] private List<GameObject> roomsList;
 
     void Awake() 
     {
+        PlayerStarted = false;
+
         if(instance == null) 
         {
             instance = this;
@@ -42,6 +46,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
+    }
+
+    public void startRoomLoop() 
+    {
+        PlayerStarted=true;
     }
 
     //Scenes Manager

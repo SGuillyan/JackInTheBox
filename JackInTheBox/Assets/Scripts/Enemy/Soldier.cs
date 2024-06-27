@@ -74,9 +74,19 @@ public class Soldier : MonoBehaviour
         }
         if (other.gameObject.tag == "PlataformWall")
         {
-            transform.Rotate(Vector3.up * 180f);
+            wallRotation();
         }
     }
+
+    //Interactions
+
+    private void wallRotation()
+    {
+        Vector3 _newRotation = transform.rotation.eulerAngles;
+        _newRotation *= -1;
+        transform.rotation = Quaternion.Euler(_newRotation);
+    }
+
 
     //State Loops
 

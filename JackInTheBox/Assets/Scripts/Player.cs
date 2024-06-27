@@ -40,10 +40,6 @@ public class Player : MonoBehaviour
 
     private Rigidbody _rb;
 
-    //Player Started
-
-    public bool playerStarted;
-
     //SFX
 
     [SerializeField] private AudioClip[] jumpSoundClips;
@@ -55,8 +51,6 @@ public class Player : MonoBehaviour
     {
         //TouchActions Reference
 
-        playerStarted = false;
-
         _playerInput = GetComponent<PlayerInput>();
 
         _touchPressAction = _playerInput.actions.FindAction("Jump");
@@ -67,15 +61,19 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _currentHealth = _maxHealth;
 
-        _gameManager = FindObjectOfType<GameManager>();
 
+    }
+
+    void Start() 
+    {
+        _gameManager = GameManager.instance;        
     }
 
     void FixedUpdate()
     {
         movementRun();
         dashTimer();
-        startGame();
+        verifyStart();
     }
 
     //Collisions
@@ -84,7 +82,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            transform.Rotate(Vector3.up * 180f);
+            wallRotation();
 
             if(!_isGrounded && _wallBounced)
             {
@@ -155,6 +153,22 @@ public class Player : MonoBehaviour
             _isDashing = false;
         }
     }
+
+    private void verifyStart() 
+    {
+        if(transform.position.y > 0) 
+        {
+            _gameManager.startRoomLoop();
+        }
+    }
+
+    private void wallRotation()
+    {
+        Vector3 _newRotation = transform.rotation.eulerAngles;
+        _newRotation *= -1;
+        transform.rotation = Quaternion.Euler(_newRotation);
+    }
+
 
     //Health
 
@@ -237,14 +251,6 @@ public class Player : MonoBehaviour
             {
                 dashSide(-90);
             }
-        }
-    }
-
-    private void startGame() 
-    {
-        if(transform.position.y >= 1 && !playerStarted) 
-        {
-            playerStarted = true;
         }
     }
 }

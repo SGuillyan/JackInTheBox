@@ -3544,6 +3544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3c9f60b9d316b409eff5eef4995be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerStarted: 0
   roomsList:
   - {fileID: 2127088580}
   - {fileID: 1821982339}
