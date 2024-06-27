@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
 
     //SFX
 
+    private SFXPlayer _sfxPlayer;
+
     [SerializeField] private AudioClip[] jumpSoundClips;
     [SerializeField] private AudioClip[] hitSoundClips;
     [SerializeField] private AudioClip landSoundClip;
@@ -65,15 +67,13 @@ public class Player : MonoBehaviour
 
         _rb = GetComponent<Rigidbody>();
         _currentHealth = _maxHealth;
-
-
     }
 
     void Start() 
     {
         _gameManager = GameManager.instance;
+        _sfxPlayer = SFXPlayer.instance;
         _vfxPlayer = VFXPlayer.instance;
-
     }
 
     void FixedUpdate()
@@ -93,7 +93,8 @@ public class Player : MonoBehaviour
 
             if(!_isGrounded && _wallBounced)
             {
-                SFXPlayer.instance.PlaySFX(wallClingSoundClip, transform, 1f);
+                _sfxPlayer.PlaySFX(wallClingSoundClip, transform, 1f);
+
                 wallBounce();
             }
         }
@@ -103,7 +104,8 @@ public class Player : MonoBehaviour
             _isGrounded = true;
             _doubleJumped = true;
             _wallBounced = true;
-            SFXPlayer.instance.PlaySFX(landSoundClip, transform, 1f);
+
+            _sfxPlayer.PlaySFX(landSoundClip, transform, 1f);
         }
     }
 
@@ -128,7 +130,7 @@ public class Player : MonoBehaviour
         _rb.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
         _isGrounded = false;
 
-        SFXPlayer.instance.PlayRandomSFX(jumpSoundClips, transform, 1f);
+        _sfxPlayer.PlayRandomSFX(jumpSoundClips, transform, 1f);
     }
 
     private void dashSide(int newRotation) 
@@ -181,7 +183,8 @@ public class Player : MonoBehaviour
     {
         _currentHealth -= damageAmmount;
         
-        SFXPlayer.instance.PlayRandomSFX(hitSoundClips, transform, 1f);
+        _sfxPlayer.PlayRandomSFX(hitSoundClips, transform, 1f);
+        _vfxPlayer.PlayVFX(hitVFX, transform.position, Quaternion.identity);
 
         if(_currentHealth <= 0) 
         {

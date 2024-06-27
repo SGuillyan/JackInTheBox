@@ -1233,6 +1233,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 6855314210357232287, guid: 88cc6a647fac3844c8e577d14ff7548c, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: _dashCD
       value: 0.1
       objectReference: {fileID: 0}
@@ -3016,6 +3020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1544025015}
+  - component: {fileID: 1544025016}
   m_Layer: 0
   m_Name: VFX Manager
   m_TagString: Untagged
@@ -3038,6 +3043,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1544025016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544025014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d108758a031fec498846d3a8a417020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1566089132
 GameObject:
   m_ObjectHideFlags: 0
