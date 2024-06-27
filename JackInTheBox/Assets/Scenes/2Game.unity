@@ -1245,6 +1245,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: _maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: jumpSoundClip
       value: 
       objectReference: {fileID: 8300000, guid: 087993d12d81ff54bab9ca8b4bc68bca, type: 3}
@@ -1261,13 +1265,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 34a9e7840a57bbf4385c54dd3984be60, type: 3}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: hitSoundClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: dashSoundClips.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: jumpSoundClips.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: hitSoundClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 869ea3b04d7f5a044a323f0e822fe04e, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: hitSoundClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: a97ff26591c1f5840bd184c4e5db2d1a, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: hitSoundClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: fd80b68685436c8499d03227f62bb37b, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: hitSoundClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: a869ac3551f3bab4d965b37a5c8f8e0a, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: hitSoundClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: a97ff26591c1f5840bd184c4e5db2d1a, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: hitSoundClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: fd80b68685436c8499d03227f62bb37b, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: hitSoundClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: a869ac3551f3bab4d965b37a5c8f8e0a, type: 3}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: dashSoundClips.Array.data[0]
       value: 
@@ -1284,6 +1320,10 @@ PrefabInstance:
       propertyPath: jumpSoundClips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 2ee6c84727dde784eaeae9cfa4942946, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: jumpSoundClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9fb11de2c62c8eb4abda70a605235fbf, type: 3}
     - target: {fileID: 3530913047494704776, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.971
