@@ -6,42 +6,50 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     [SerializeField] GameObject settingsMenu;
+    
+    private SFXPlayer _sfxPlayer;
+    [SerializeField] AudioClip btnClickSoundClip;
 
     void Awake()
     {
         settingsMenu.SetActive(false);
     }
 
+    void Start()
+    {
+        _sfxPlayer = SFXPlayer.instance;
+    }
+
     private void ButtonClicked()
     {
-
+        _sfxPlayer.PlaySFX(btnClickSoundClip, transform, 1f);
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene("2Game");
         Time.timeScale = 1;        
-    //    ButtonClicked();
+        ButtonClicked();
     }
 
     public void PauseGame()
     {
         settingsMenu.SetActive(true);
         Time.timeScale = 0;
-    //    ButtonClicked();
+        ButtonClicked();
     }
 
     public void CloseSettingsMenu()
     {
         settingsMenu.SetActive(false);
         Time.timeScale = 1;
-    //    ButtonClicked();
+        ButtonClicked();
     }
 
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("1MainMenu");
-    //    ButtonClicked();
+        ButtonClicked();
     }
 
     public void QuitGame()

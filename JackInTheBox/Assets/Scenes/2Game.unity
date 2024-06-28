@@ -3088,6 +3088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsMenu: {fileID: 51764289}
+  btnClickSoundClip: {fileID: 8300000, guid: e029a69fcd2132646a5cfffa9f62cf1e, type: 3}
 --- !u!114 &1566089134
 MonoBehaviour:
   m_ObjectHideFlags: 0
