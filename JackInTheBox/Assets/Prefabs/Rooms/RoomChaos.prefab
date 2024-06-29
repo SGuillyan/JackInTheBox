@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0.3
-  gameManager: {fileID: 0}
 --- !u!1001 &445202690290784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -383,9 +382,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8103564882559940844}
     m_Modifications:
+    - target: {fileID: 422317195252534850, guid: 833bcf0f5ff8a5f449ab2f18137b0932, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1677413172912309037, guid: 833bcf0f5ff8a5f449ab2f18137b0932, type: 3}
       propertyPath: m_Name
       value: Soldier (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338452076507909098, guid: 833bcf0f5ff8a5f449ab2f18137b0932, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5904644267907553625, guid: 833bcf0f5ff8a5f449ab2f18137b0932, type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,6 +494,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8650397285282144266, guid: 182cf344132de024ebd646ec2133e789, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838056505881065214, guid: 182cf344132de024ebd646ec2133e789, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -591,6 +591,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2088421957487104575}
     m_Modifications:
+    - target: {fileID: 422317195252534850, guid: 833bcf0f5ff8a5f449ab2f18137b0932, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1677413172912309037, guid: 833bcf0f5ff8a5f449ab2f18137b0932, type: 3}
       propertyPath: m_Name
       value: Soldier
