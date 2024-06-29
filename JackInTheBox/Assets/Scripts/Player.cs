@@ -107,6 +107,11 @@ public class Player : MonoBehaviour
 
             _sfxPlayer.PlaySFX(landSoundClip, transform, 1f);
         }
+
+        if (collision.gameObject.tag == "Stick")
+        {
+            takeDamage(1);
+        }
     }
 
     //Movement

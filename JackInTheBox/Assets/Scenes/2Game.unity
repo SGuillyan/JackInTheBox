@@ -1250,7 +1250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: _maxHealth
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: jumpSoundClip
@@ -2518,7 +2518,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5536411524940112787, guid: 7c8495bea93c6c047b7544e6d6931259, type: 3}
       propertyPath: m_Name
-      value: RoomStar2
+      value: RoomStart2
       objectReference: {fileID: 0}
     - target: {fileID: 6133494657854734903, guid: 7c8495bea93c6c047b7544e6d6931259, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3633,6 +3633,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1892289016}
+    - target: {fileID: 2028071336463221101, guid: 4f0a96c4877efdf468e7a46be27c6dc4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2496339133222406108, guid: 4f0a96c4877efdf468e7a46be27c6dc4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4

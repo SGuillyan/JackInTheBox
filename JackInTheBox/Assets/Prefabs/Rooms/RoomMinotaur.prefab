@@ -82,7 +82,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0.3
-  gameManager: {fileID: 0}
 --- !u!1 &9171668389407905259
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +190,10 @@ PrefabInstance:
     - target: {fileID: 8467522455011527201, guid: 182cf344132de024ebd646ec2133e789, type: 3}
       propertyPath: m_Name
       value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467522455011527201, guid: 182cf344132de024ebd646ec2133e789, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8650397285282144266, guid: 182cf344132de024ebd646ec2133e789, type: 3}
       propertyPath: m_LocalPosition.x

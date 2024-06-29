@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3978656137893307402}
   m_Layer: 0
-  m_Name: Estacas
+  m_Name: Sticks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 6133494657854734903}
   - component: {fileID: 4004855344810852339}
   m_Layer: 0
-  m_Name: RoomStar2
+  m_Name: RoomStart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

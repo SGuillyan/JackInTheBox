@@ -52,8 +52,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pirulistaca
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5840640aa163ab848b1e1b4f2434ee87, type: 3}
+      propertyPath: m_TagString
+      value: Stick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5840640aa163ab848b1e1b4f2434ee87, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 574295184523010175}
   m_SourcePrefab: {fileID: 100100000, guid: 5840640aa163ab848b1e1b4f2434ee87, type: 3}
+--- !u!1 &4223910391722052321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5840640aa163ab848b1e1b4f2434ee87, type: 3}
+  m_PrefabInstance: {fileID: 3917904965319899056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &574295184523010175
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223910391722052321}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.032333635
+  m_Height: 0.39971036
+  m_Direction: 1
+  m_Center: {x: -0.0015036911, y: 0.20169774, z: -0.00000011920929}
