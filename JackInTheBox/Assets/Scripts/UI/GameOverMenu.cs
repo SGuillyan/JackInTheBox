@@ -5,8 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
+    private GameManager _gameManager;
+
+    void Start()
+    {
+        _gameManager = GameManager.instance;
+    }
+
+
     public void StartGame()
     {
+        _gameManager.restartRoomLoop();
         SceneManager.LoadScene("2Game");
         Time.timeScale = 1;        
     //    ButtonClicked();
