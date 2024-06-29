@@ -176,8 +176,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3530913047494704776}
   - component: {fileID: 326536598763755822}
-  - component: {fileID: 1503957391612753339}
   - component: {fileID: 3318816541524514526}
+  - component: {fileID: 1324331881827407044}
   - component: {fileID: 8441674367217812524}
   - component: {fileID: 2519943039532964785}
   m_Layer: 0
@@ -230,28 +230,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 88
-  m_CollisionDetection: 1
---- !u!65 &1503957391612753339
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8667561868824933382}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3016617, y: 0.27539074, z: 0.40128514}
-  m_Center: {x: 0.002060786, y: 0.013379604, z: 0.049567416}
+  m_CollisionDetection: 2
 --- !u!65 &3318816541524514526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -271,8 +250,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.30090138, y: 0.3010093, z: 0.30138576}
-  m_Center: {x: -0.0008673817, y: -0.0009212792, z: 0.00070753694}
+  m_Size: {x: 0.30090138, y: 0.30507842, z: 0.30597672}
+  m_Center: {x: -0.0008673817, y: 0.0031837672, z: 0.004010007}
+--- !u!65 &1324331881827407044
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8667561868824933382}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.13544971, z: 0.4116255}
+  m_Center: {x: 1, y: -0.08645502, z: 0.056435972}
 --- !u!114 &8441674367217812524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,4 +331,8 @@ MonoBehaviour:
   _isDashing: 0
   _currentHealth: 0
   _maxHealth: 10
-  playerStarted: 0
+  jumpSoundClips: []
+  hitSoundClips: []
+  landSoundClip: {fileID: 0}
+  wallClingSoundClip: {fileID: 0}
+  hitVFX: {fileID: 0}
