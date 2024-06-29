@@ -9,6 +9,8 @@ public class MenuButtons : MonoBehaviour
     
     private SFXPlayer _sfxPlayer;
     [SerializeField] AudioClip btnClickSoundClip;
+    private GameManager _gameManager;
+
 
     void Awake()
     {
@@ -18,6 +20,8 @@ public class MenuButtons : MonoBehaviour
     void Start()
     {
         _sfxPlayer = SFXPlayer.instance;
+        _gameManager = GameManager.instance;
+
     }
 
     private void ButtonClicked()
@@ -27,6 +31,7 @@ public class MenuButtons : MonoBehaviour
 
     public void StartGame()
     {
+        _gameManager.restartRoomLoop();
         SceneManager.LoadScene("2Game");
         Time.timeScale = 1;        
         ButtonClicked();

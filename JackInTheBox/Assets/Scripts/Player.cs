@@ -199,6 +199,7 @@ public class Player : MonoBehaviour
 
         if(_currentHealth <= 0) 
         {
+            _gameManager.restartRoomLoop();
             _gameManager.loadGameOver();
         }
     }

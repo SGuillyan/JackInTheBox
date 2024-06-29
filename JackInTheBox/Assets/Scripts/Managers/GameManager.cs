@@ -50,7 +50,12 @@ public class GameManager : MonoBehaviour
 
     public void startRoomLoop() 
     {
-        PlayerStarted=true;
+        PlayerStarted = true;
+    }
+
+    public void restartRoomLoop() 
+    {
+        PlayerStarted = false;
     }
 
     //Scenes Manager
