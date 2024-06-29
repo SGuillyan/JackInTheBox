@@ -117,6 +117,11 @@ public class Player : MonoBehaviour
             takeDamage(1);
         }
 
+        if (collision.gameObject.tag == "DeathBoundry")
+        {
+            _gameManager.loadGameOver();
+        }
+
 
     }
 

@@ -8,6 +8,7 @@ TagManager:
   - Plataform
   - PlataformWall
   - Stick
+  - DeathBoundry
   layers:
   - Default
   - TransparentFX
