@@ -68,19 +68,28 @@ public class Minotaur : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (_player._isDashing) 
+            if(!_isDead) 
             {
-                deathLoop();
-            }
-            else 
-            {
-                _player.takeDamage(3);
+                playerCollisionManager();
             }
         }
         if (other.gameObject.tag == "PlataformWall")
         {
             wallRotation();
         }
+    }
+
+    void playerCollisionManager() 
+    {
+        if (_player._isDashing) 
+        {
+            deathLoop();
+        }
+        else 
+        {
+            _player.takeDamage(3);
+        }
+        
     }
 
     //Interactions
