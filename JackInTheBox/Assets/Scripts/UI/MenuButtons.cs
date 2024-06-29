@@ -6,22 +6,26 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     [SerializeField] GameObject settingsMenu;
+    [SerializeField] GameObject helpMenu;
+    [SerializeField] GameObject creditsMenu;
     
     private SFXPlayer _sfxPlayer;
     [SerializeField] AudioClip btnClickSoundClip;
+    
     private GameManager _gameManager;
 
 
     void Awake()
     {
         settingsMenu.SetActive(false);
+        helpMenu.SetActive(false);
+        creditsMenu.SetActive(false);
     }
 
     void Start()
     {
         _sfxPlayer = SFXPlayer.instance;
         _gameManager = GameManager.instance;
-
     }
 
     private void ButtonClicked()
@@ -47,6 +51,8 @@ public class MenuButtons : MonoBehaviour
     public void CloseSettingsMenu()
     {
         settingsMenu.SetActive(false);
+        helpMenu.SetActive(false);
+        creditsMenu.SetActive(false);
         Time.timeScale = 1;
         ButtonClicked();
     }
@@ -57,9 +63,16 @@ public class MenuButtons : MonoBehaviour
         ButtonClicked();
     }
 
-    public void QuitGame()
+    public void HelpMenu()
     {
-        Debug.Log("Fechar programa");
-        Application.Quit();
+        helpMenu.SetActive(true);
+        ButtonClicked();
+    }
+
+    public void CreditsMenu()
+    {
+        creditsMenu.SetActive(true);
+        settingsMenu.SetActive(true);        
+        ButtonClicked();        
     }
 }

@@ -5,25 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
+    [SerializeField] GameObject creditsMenu;
+
     private GameManager _gameManager;
+
+    void Awake()
+    {
+        creditsMenu.SetActive(false);
+    }
 
     void Start()
     {
         _gameManager = GameManager.instance;
     }
 
-
     public void StartGame()
     {
         _gameManager.restartRoomLoop();
         SceneManager.LoadScene("2Game");
-        Time.timeScale = 1;        
-    //    ButtonClicked();
+        Time.timeScale = 1;
     }
 
-    public void QuitGame()
+    public void CreditsMenu()
     {
-        Debug.Log("Fechar programa");
-        Application.Quit();
+        creditsMenu.SetActive(true);
+    }
+
+    public void CloseCreditsMenu()
+    {
+        creditsMenu.SetActive(false);
     }
 }
