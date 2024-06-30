@@ -163,6 +163,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.JackInTheBox
     Standalone: com.DefaultCompany.JackInTheBox
   buildNumber:
     Standalone: 0
