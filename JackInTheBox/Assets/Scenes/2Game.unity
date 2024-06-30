@@ -1254,7 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: _aceleration
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: jumpSoundClip
@@ -1338,7 +1338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3530913047494704776, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.965
+      value: -0.9631444
       objectReference: {fileID: 0}
     - target: {fileID: 3530913047494704776, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: m_LocalPosition.z

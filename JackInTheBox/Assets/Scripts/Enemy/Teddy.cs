@@ -12,10 +12,13 @@ public class Teddy : MonoBehaviour
     private MeshRenderer _meshRenderer;
     private Transform _transform;
 
-    private float _timer = 2f;
+    private float _timer = 1.9f;
     private Coroutine countdownCoroutine;
 
     private float explosionRadius = 0.6f;
+
+    [SerializeField] private AudioClip explosionSoundClip;
+    private SFXPlayer _sfxPlayer;
 
     void Awake()
     {
@@ -32,6 +35,11 @@ public class Teddy : MonoBehaviour
         _transform = GetComponent<Transform>();
     }
 
+    void Start()
+    {
+        _sfxPlayer = SFXPlayer.instance;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -44,6 +52,7 @@ public class Teddy : MonoBehaviour
     void StartExplosion()
     {
         countdownCoroutine = StartCoroutine(Countdown());
+        _sfxPlayer.PlaySFX(explosionSoundClip, transform, 1f);
     }
 
     IEnumerator Countdown()

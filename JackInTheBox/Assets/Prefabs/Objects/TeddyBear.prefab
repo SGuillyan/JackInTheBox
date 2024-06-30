@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8194992990867289334, guid: eaef805deb42ace4ca0ad5e4614753c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8194992990867289334, guid: eaef805deb42ace4ca0ad5e4614753c4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe0928cc11d2714093db792b58aa0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionSoundClip: {fileID: 8300000, guid: 4166217ce169a26498f979458971aa6f, type: 3}
 --- !u!65 &-8798453318653030876
 BoxCollider:
   m_ObjectHideFlags: 0
