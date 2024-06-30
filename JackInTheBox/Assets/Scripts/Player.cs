@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _aceleration = 20.0f;
     [SerializeField] private float _maxSpeed = 2.0f;
+    
+    // Change the acceleration from right to left on the ChangeSide()
+    private int _side = 1;
 
     [SerializeField] private float _jumpForce = 10.0f;
     [SerializeField] private float _dashForce = 1.0f;
@@ -142,8 +145,6 @@ public class Player : MonoBehaviour
         {
             _gameManager.loadGameOver();
         }
-
-
     }
 
     //Movement
@@ -152,13 +153,16 @@ public class Player : MonoBehaviour
     {
         if (!_isDashing)
         {
-            _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
+            if (_side == 1)
+                _rb.velocity = Vector3.right * _aceleration;
+            else if (_side == -1)
+                _rb.velocity = Vector3.left * _aceleration;
+            //  _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
 
-            if (_rb.velocity.magnitude >= _maxSpeed)
-            {
-                _rb.velocity = _rb.velocity.normalized * _maxSpeed;
-            }
-       
+            //  if (_rb.velocity.magnitude >= _maxSpeed)
+            //  {
+            //      _rb.velocity = _rb.velocity.normalized * _maxSpeed;
+            //  }
         }
     }
 
@@ -218,9 +222,17 @@ public class Player : MonoBehaviour
     {
         Vector3 _newRotation = transform.rotation.eulerAngles;
         _newRotation *= -1;
+        ChangeSide();        
         transform.rotation = Quaternion.Euler(_newRotation);
     }
 
+    private void ChangeSide()
+    {
+        if (_side == 1)
+            _side = -1;
+        else
+            _side = 1;
+    }
 
     //Health
 
