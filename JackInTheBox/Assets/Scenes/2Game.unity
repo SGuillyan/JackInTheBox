@@ -2419,6 +2419,22 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 871535251383133355, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.21409374
+      objectReference: {fileID: 0}
+    - target: {fileID: 871535251383133355, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1617
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068436582455535312, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.21724218
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068436582455535312, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1691
+      objectReference: {fileID: 0}
     - target: {fileID: 3110539786757215794, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
       propertyPath: m_Name
       value: RoomStart
@@ -2478,6 +2494,30 @@ PrefabInstance:
     - target: {fileID: 3851556231515346225, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467451128929334869, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4546875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467451128929334869, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.21409374
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467451128929334869, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467451128929334869, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.031704
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405377144498187243, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.22668748
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405377144498187243, guid: d67d149eb257b3a42bbd819efeb01f94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.3811
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
