@@ -6,7 +6,7 @@ public class Teddy : MonoBehaviour
 {
     //References
 
-    private Rigidbody _rb;
+    //private Rigidbody _rb;
     private Player _player;
     private BoxCollider _boxCollider;
     private MeshRenderer _meshRenderer;
@@ -29,7 +29,7 @@ public class Teddy : MonoBehaviour
             _player = playerGameObject.GetComponent<Player>();
         }
 
-        _rb = GetComponent<Rigidbody>();
+        //_rb = GetComponent<Rigidbody>();
         _boxCollider = GetComponent<BoxCollider>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _transform = GetComponent<Transform>();
