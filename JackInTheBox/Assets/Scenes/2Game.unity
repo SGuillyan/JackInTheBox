@@ -1420,15 +1420,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3530913047494704776, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.85
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3530913047494704776, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.85
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 3530913047494704776, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3530913047494704776, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4041,19 +4041,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerStarted: 0
-  roomsList:
-  - {fileID: 2127088580}
-  - {fileID: 1821982339}
-  - {fileID: 1871680059}
-  - {fileID: 379757170}
-  - {fileID: 1203176109}
-  - {fileID: 1669126934}
-  - {fileID: 165174671}
-  - {fileID: 188609105}
-  - {fileID: 2023601602}
-  - {fileID: 244202304}
-  - {fileID: 316116453}
-  - {fileID: 915200562}
 --- !u!1 &1897224363
 GameObject:
   m_ObjectHideFlags: 0
