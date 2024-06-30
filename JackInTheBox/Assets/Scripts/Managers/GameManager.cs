@@ -10,57 +10,55 @@ public class GameManager : MonoBehaviour
 
     public bool PlayerStarted;
 
-    [SerializeField] private List<GameObject> roomsList;
+    private ListRoom listRoom;
 
-    void Awake() 
+    void Awake()
     {
         PlayerStarted = false;
 
-        if(instance == null) 
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else 
+        else
         {
-            Destroy(gameObject);        
+            Destroy(gameObject);
         }
     }
 
-    //Random Room Loop
-
-    public void roomRandomLoop() 
+    void Start()
     {
-        bool foundInactiveRoom = false;
-        int randomIndex = 0;
+        // Certifique-se de que ListRoom está presente na cena e acessível.
+        listRoom = FindObjectOfType<ListRoom>();
 
-        while(!foundInactiveRoom)
+        if (listRoom == null)
         {
-            randomIndex = Random.Range(0, roomsList.Count);
-            GameObject randomRoom = roomsList[randomIndex];
-
-            if (!randomRoom.activeSelf) 
-            {
-                randomRoom.SetActive(true);
-                foundInactiveRoom = true;
-            }
+            Debug.LogError("ListRoom não encontrado na cena!");
         }
-
     }
 
-    public void startRoomLoop() 
+    // Random Room Loop
+    public void roomRandomLoop()
+    {
+        if (listRoom != null)
+        {
+            listRoom.roomRandomLoop();
+        }
+    }
+
+    public void startRoomLoop()
     {
         PlayerStarted = true;
     }
 
-    public void restartRoomLoop() 
+    public void restartRoomLoop()
     {
         PlayerStarted = false;
     }
 
-    //Scenes Manager
-
-    public void loadGameOver() 
+    // Scenes Manager
+    public void loadGameOver()
     {
         SceneManager.LoadScene("3GameOver");
     }
