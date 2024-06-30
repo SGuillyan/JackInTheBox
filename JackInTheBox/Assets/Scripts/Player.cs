@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     //Movement
 
     [SerializeField] private float _aceleration = 20.0f;
-    [SerializeField] private float _maxSpeed = 2.0f;
+    //[SerializeField] private float _maxSpeed = 2.0f;
     
     // Change the acceleration from right to left on the ChangeSide()
     private int _side = 1;

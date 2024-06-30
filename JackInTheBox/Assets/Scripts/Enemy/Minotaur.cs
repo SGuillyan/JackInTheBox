@@ -55,24 +55,17 @@ public class Minotaur : MonoBehaviour
 
     void movementRun()
     {
-        if (_side == 1)
+        if (!_isCharging && !_isDead)
         {
-            _rb.velocity = Vector3.right * _aceleration;
+            if (_side == 1)
+            {
+                _rb.velocity = Vector3.right * _aceleration;
+            }
+            else if (_side == -1)
+            {
+                _rb.velocity = Vector3.left * _aceleration;
+            }
         }
-        else if (_side == -1)
-        {
-            _rb.velocity = Vector3.left * _aceleration;
-        }
-        // if (!_isCharging && !_isDead)
-        // {
-        //     _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
-
-        //     if (_rb.velocity.magnitude >= _maxSpeed)
-        //     {
-        //         _rb.velocity = _rb.velocity.normalized * _maxSpeed;
-        //     }
-
-        // }
     }
 
     //Collisions
