@@ -11,7 +11,14 @@ public class SFXPlayer : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void PlayRandomSFX(AudioClip[] audioClip, Transform spawnTransform, float volume)

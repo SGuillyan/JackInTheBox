@@ -9,7 +9,14 @@ public class VFXPlayer : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void PlayVFX(GameObject vfx, Vector3 position, Quaternion rotation)

@@ -44,6 +44,9 @@ public class Player : MonoBehaviour
 
     private SFXPlayer _sfxPlayer;
 
+    private float _sfxCooldownTimer = 1f;
+    private bool _sfxCanPlay = true;
+
     [SerializeField] private AudioClip[] jumpSoundClips;
     [SerializeField] private AudioClip[] hitSoundClips;
     [SerializeField] private AudioClip landSoundClip;
@@ -146,7 +149,8 @@ public class Player : MonoBehaviour
         _rb.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
         _isGrounded = false;
 
-        _sfxPlayer.PlayRandomSFX(jumpSoundClips, transform, 1f);
+        //_sfxPlayer.PlayRandomSFX(jumpSoundClips, transform, 1f);
+        PlayerSound(jumpSoundClips);
     }
 
     private void dashSide(int newRotation) 
@@ -199,7 +203,9 @@ public class Player : MonoBehaviour
     {
         _currentHealth -= damageAmmount;
         
-        _sfxPlayer.PlayRandomSFX(hitSoundClips, transform, 1f);
+        //_sfxPlayer.PlayRandomSFX(hitSoundClips, transform, 1f);
+        PlayerSound(hitSoundClips);
+
         _vfxPlayer.PlayVFX(hitVFX, transform.position, Quaternion.identity);
 
         if(_currentHealth <= 0) 
@@ -279,6 +285,31 @@ public class Player : MonoBehaviour
             {
                 dashSide(-90);
             }
+        }
+    }
+
+    private IEnumerator SFXCooldown()
+    {
+        _sfxCanPlay = false;
+        yield return new WaitForSeconds(_sfxCooldownTimer);
+        _sfxCanPlay = true;
+    }
+
+    private void PlayerSound(AudioClip sfx)
+    {
+        if (_sfxCanPlay)
+        {
+            _sfxPlayer.PlaySFX(sfx, transform, 1f);
+            StartCoroutine(SFXCooldown());
+        }
+    }
+
+    private void PlayerSound(AudioClip[] sfx)
+    {
+        if (_sfxCanPlay)
+        {
+            _sfxPlayer.PlayRandomSFX(sfx, transform, 1f);
+            StartCoroutine(SFXCooldown());
         }
     }
 }
