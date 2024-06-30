@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _aceleration = 20.0f;
     //[SerializeField] private float _maxSpeed = 2.0f;
-    
+
     // Change the acceleration from right to left on the ChangeSide()
     private int _side = 1;
 
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private bool _isGrounded;
     private bool _wallBounced;
     public bool _isDashing;
-   
+
 
     //Health
 
@@ -81,12 +81,12 @@ public class Player : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
-    void Start() 
+    void Start()
     {
         _gameManager = GameManager.instance;
         _sfxPlayer = SFXPlayer.instance;
         _vfxPlayer = VFXPlayer.instance;
-        animatorPlayer.SetBool("Run", false);
+        animatorPlayer.SetBool("Run", true);
 
     }
 
@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
         {
             wallRotation();
 
-            if(!_isGrounded && _wallBounced)
+            if (!_isGrounded && _wallBounced)
             {
                 _sfxPlayer.PlaySFX(wallClingSoundClip, transform, 1f);
 
@@ -153,11 +153,16 @@ public class Player : MonoBehaviour
     {
         if (!_isDashing)
         {
+            animatorPlayer.SetBool("Run", true);
+
+            Vector3 newVelocity = _rb.velocity;
+
             if (_side == 1)
-                _rb.velocity = Vector3.right * _aceleration;
+                newVelocity.x = _aceleration;
             else if (_side == -1)
-                _rb.velocity = Vector3.left * _aceleration;
-            //  _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
+                newVelocity.x = -_aceleration;
+
+            _rb.velocity = newVelocity;            //  _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
 
             //  if (_rb.velocity.magnitude >= _maxSpeed)
             //  {
@@ -177,9 +182,9 @@ public class Player : MonoBehaviour
         PlayerSound(jumpSoundClips);
     }
 
-    private void dashSide(int newRotation) 
+    private void dashSide(int newRotation)
     {
-        transform.rotation = Quaternion.Euler(0,  newRotation, 0);
+        transform.rotation = Quaternion.Euler(0, newRotation, 0);
         _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
         _isDashing = true;
         _dashStartTimer = Time.time;
@@ -188,31 +193,32 @@ public class Player : MonoBehaviour
 
     }
 
-    private void dashDown() 
+    private void dashDown()
     {
-        _rb.AddForce(-transform.up * _dashForce , ForceMode.Impulse);
+        _rb.AddForce(-transform.up * _dashForce, ForceMode.Impulse);
         _isDashing = true;
         _dashStartTimer = Time.time;
         animatorPlayer.SetBool("Run", true);
 
     }
 
-    private void wallBounce() 
+    private void wallBounce()
     {
-        _rb.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+        basicJump();
+
     }
 
-    private void dashTimer() 
+    private void dashTimer()
     {
-        if(Time.time - _dashStartTimer >= _dashCD) 
+        if (Time.time - _dashStartTimer >= _dashCD)
         {
             _isDashing = false;
         }
     }
 
-    private void verifyStart() 
+    private void verifyStart()
     {
-        if(transform.position.y > 0) 
+        if (transform.position.y > 0)
         {
             _gameManager.startRoomLoop();
         }
@@ -222,7 +228,7 @@ public class Player : MonoBehaviour
     {
         Vector3 _newRotation = transform.rotation.eulerAngles;
         _newRotation *= -1;
-        ChangeSide();        
+        ChangeSide();
         transform.rotation = Quaternion.Euler(_newRotation);
     }
 
@@ -239,13 +245,13 @@ public class Player : MonoBehaviour
     public void takeDamage(int damageAmmount)
     {
         _currentHealth -= damageAmmount;
-        
+
         //_sfxPlayer.PlayRandomSFX(hitSoundClips, transform, 1f);
         PlayerSound(hitSoundClips);
 
         _vfxPlayer.PlayVFX(hitVFX, transform.position, Quaternion.identity);
 
-        if(_currentHealth <= 0) 
+        if (_currentHealth <= 0)
         {
             _gameManager.restartRoomLoop();
             _gameManager.loadGameOver();
@@ -285,15 +291,15 @@ public class Player : MonoBehaviour
             _doubleJumped = false;
         }
     }
-        //Swipe (Dashes)
+    //Swipe (Dashes)
 
-    private void SwipePerformed(InputAction.CallbackContext context) 
+    private void SwipePerformed(InputAction.CallbackContext context)
     {
         Vector2 swipeDelta = context.ReadValue<Vector2>();
         float minSwipeDistance = 50f;
         float maxSwipeDistance = 100f;
 
-        if(swipeDelta.magnitude > minSwipeDistance && swipeDelta.magnitude < maxSwipeDistance) 
+        if (swipeDelta.magnitude > minSwipeDistance && swipeDelta.magnitude < maxSwipeDistance)
         {
             // Swipe up (PlaceHolder)
 
@@ -302,25 +308,27 @@ public class Player : MonoBehaviour
                 //Maybe Special
             }
 
-                // Swipe down (Dash Down)
+            // Swipe down (Dash Down)
 
             else if (swipeDelta.y < -Mathf.Abs(swipeDelta.x))
             {
                 dashDown();
             }
 
-                // Swipe right (Dash Right)
+            // Swipe right (Dash Right)
 
             else if (swipeDelta.x > Mathf.Abs(swipeDelta.y))
             {
-                dashSide(90);            
+                dashSide(90);
+                _side = 1;
             }
 
-                // Swipe left (Dash Left)
+            // Swipe left (Dash Left)
 
             else if (swipeDelta.x < -Mathf.Abs(swipeDelta.y))
             {
                 dashSide(-90);
+                _side = -1;
             }
         }
     }
