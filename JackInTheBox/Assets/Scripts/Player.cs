@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
 
     private GameManager _gameManager;
 
+
+
     //Physics
 
     private Rigidbody _rb;
@@ -58,6 +60,9 @@ public class Player : MonoBehaviour
     private VFXPlayer _vfxPlayer;
     [SerializeField] private GameObject hitVFX;
 
+    //Animations
+    public Animator animatorPlayer;
+
     void Awake()
     {
         //TouchActions Reference
@@ -78,7 +83,10 @@ public class Player : MonoBehaviour
         _gameManager = GameManager.instance;
         _sfxPlayer = SFXPlayer.instance;
         _vfxPlayer = VFXPlayer.instance;
+        animatorPlayer.SetBool("Run", false);
+
     }
+
 
     void FixedUpdate()
     {
@@ -112,6 +120,8 @@ public class Player : MonoBehaviour
             _isGrounded = true;
             _doubleJumped = true;
             _wallBounced = true;
+            animatorPlayer.SetBool("Run", true);
+
 
             _sfxPlayer.PlaySFX(landSoundClip, transform, 1f);
         }
@@ -156,6 +166,8 @@ public class Player : MonoBehaviour
     {
         _rb.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
         _isGrounded = false;
+        animatorPlayer.SetBool("Run", false);
+        animatorPlayer.SetTrigger("Jump");
 
         //_sfxPlayer.PlayRandomSFX(jumpSoundClips, transform, 1f);
         PlayerSound(jumpSoundClips);
@@ -167,6 +179,9 @@ public class Player : MonoBehaviour
         _rb.AddForce(transform.forward * _dashForce, ForceMode.Impulse);
         _isDashing = true;
         _dashStartTimer = Time.time;
+        animatorPlayer.SetTrigger("Dash");
+        animatorPlayer.SetBool("Run", true);
+
     }
 
     private void dashDown() 
@@ -174,6 +189,8 @@ public class Player : MonoBehaviour
         _rb.AddForce(-transform.up * _dashForce , ForceMode.Impulse);
         _isDashing = true;
         _dashStartTimer = Time.time;
+        animatorPlayer.SetBool("Run", true);
+
     }
 
     private void wallBounce() 
