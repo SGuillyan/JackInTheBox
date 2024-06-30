@@ -44,13 +44,14 @@ public class Player : MonoBehaviour
 
     private SFXPlayer _sfxPlayer;
 
-    private float _sfxCooldownTimer = 1f;
+    private float _sfxCooldownTimer = 0.5f;
     private bool _sfxCanPlay = true;
 
     [SerializeField] private AudioClip[] jumpSoundClips;
     [SerializeField] private AudioClip[] hitSoundClips;
     [SerializeField] private AudioClip landSoundClip;
     [SerializeField] private AudioClip wallClingSoundClip;
+    [SerializeField] private AudioClip healingSoundClip;
 
     //VFX
 
@@ -118,6 +119,13 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Stick")
         {
             takeDamage(1);
+        }
+
+        if (other.gameObject.tag == "Healing")
+        {
+            healPlayer(5);
+            _sfxPlayer.PlaySFX(healingSoundClip, transform, 0.5f);
+            Destroy(other.gameObject);
         }
 
         if (other.gameObject.tag == "DeathBoundry")

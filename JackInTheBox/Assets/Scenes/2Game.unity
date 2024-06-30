@@ -1269,6 +1269,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
+      propertyPath: healingSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e12a9a4101c7964f8424227287d19d1, type: 3}
+    - target: {fileID: 2519943039532964785, guid: c4fc68a4132d94543bcbce6b519600e6, type: 3}
       propertyPath: wallClingSoundClip
       value: 
       objectReference: {fileID: 8300000, guid: 34a9e7840a57bbf4385c54dd3984be60, type: 3}

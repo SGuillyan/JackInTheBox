@@ -9,6 +9,8 @@ TagManager:
   - PlataformWall
   - Stick
   - DeathBoundry
+  - FxTemporaire
+  - Healing
   layers:
   - Default
   - TransparentFX
