@@ -170,6 +170,7 @@ MonoBehaviour:
   wallClingSoundClip: {fileID: 0}
   healingSoundClip: {fileID: 0}
   hitVFX: {fileID: 0}
+  animatorPlayer: {fileID: 206172456526209395}
 --- !u!1001 &944469172470021546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -237,8 +238,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16ae784115939c1499fe329009d3e52c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 206172456526209395}
   m_SourcePrefab: {fileID: 100100000, guid: 16ae784115939c1499fe329009d3e52c, type: 3}
+--- !u!1 &133423969497563387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16ae784115939c1499fe329009d3e52c, type: 3}
+  m_PrefabInstance: {fileID: 944469172470021546}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &206172456526209395
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133423969497563387}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a754c4bf3d9e0e46a128325ff493100, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &761623768146418241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16ae784115939c1499fe329009d3e52c, type: 3}

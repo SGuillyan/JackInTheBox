@@ -3,22 +3,7 @@ guid: d08e30a1b590c0e4c9c871f229d8933d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: RoseMetallic
-    second: {fileID: 2800000, guid: c3d2d470a43c1214d825f1e9670d0ca4, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: RoseRoughness
-    second: {fileID: 2800000, guid: 24e04abb12824074ca8ad5df9cfb8525, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: RoseTexturePainted
-    second: {fileID: 2800000, guid: a529108751f8f064195a4da4cd7f306c, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

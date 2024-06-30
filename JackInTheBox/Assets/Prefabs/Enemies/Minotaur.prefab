@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniTarFinished
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 03f1f8700f28b8647ac1be3fd52bc87b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 574a7eff412e13d46926c076b8acba7d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
