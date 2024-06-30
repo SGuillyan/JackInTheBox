@@ -92,9 +92,9 @@ public class Player : MonoBehaviour
     {
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "Wall")
         {
             wallRotation();
 
@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.tag == "Plataform")
+        if (other.gameObject.tag == "Plataform")
         {
             _isGrounded = true;
             _doubleJumped = true;
@@ -115,12 +115,12 @@ public class Player : MonoBehaviour
             _sfxPlayer.PlaySFX(landSoundClip, transform, 1f);
         }
 
-        if (collision.gameObject.tag == "Stick")
+        if (other.gameObject.tag == "Stick")
         {
             takeDamage(1);
         }
 
-        if (collision.gameObject.tag == "DeathBoundry")
+        if (other.gameObject.tag == "DeathBoundry")
         {
             _gameManager.loadGameOver();
         }
