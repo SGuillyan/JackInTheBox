@@ -119,6 +119,8 @@ public class Soldier : MonoBehaviour
         _rb.isKinematic = true;
         _boxCollider.enabled = false;
         _isDead = true;
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        Destroy(gameObject, 1);        
     }
 
     void startLoop()

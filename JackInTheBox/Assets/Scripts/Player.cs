@@ -28,6 +28,12 @@ public class Player : MonoBehaviour
 
     [SerializeField] private int _currentHealth;
     [SerializeField] private int _maxHealth = 10;
+    
+    private float _invulnerableDuration = 1.5f;
+    private float _invulnerableCD = 2f;
+    private bool _isInvulnerable = false;
+    private float _lastDamageTime;
+    private Coroutine countdownInvulnerable;
 
     //Input Touch Actions
 
@@ -244,18 +250,30 @@ public class Player : MonoBehaviour
 
     public void takeDamage(int damageAmmount)
     {
-        _currentHealth -= damageAmmount;
-
-        //_sfxPlayer.PlayRandomSFX(hitSoundClips, transform, 1f);
-        PlayerSound(hitSoundClips);
-
-        _vfxPlayer.PlayVFX(hitVFX, transform.position, Quaternion.identity);
-
-        if (_currentHealth <= 0)
+        if (Time.time >= _lastDamageTime + _invulnerableCD)
         {
-            _gameManager.restartRoomLoop();
-            _gameManager.loadGameOver();
+            _currentHealth -= damageAmmount;
+            _lastDamageTime = Time.time;
+
+            StartCoroutine(Invulnerable());
+
+            PlayerSound(hitSoundClips);
+
+            _vfxPlayer.PlayVFX(hitVFX, transform.position, Quaternion.identity);
+
+            if (_currentHealth <= 0)
+            {
+                _gameManager.restartRoomLoop();
+                _gameManager.loadGameOver();
+            }
         }
+    }
+
+    IEnumerator Invulnerable()
+    {
+        _isInvulnerable = true;
+        yield return new WaitForSeconds(_invulnerableDuration);
+        _isInvulnerable = false;
     }
 
     void healPlayer(int healAmmount)

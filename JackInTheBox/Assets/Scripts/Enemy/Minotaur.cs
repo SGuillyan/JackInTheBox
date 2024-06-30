@@ -123,6 +123,8 @@ public class Minotaur : MonoBehaviour
         _rb.isKinematic = false;
         _boxCollider.enabled = false;
         _isDead = true;
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        Destroy(gameObject, 1);
     }
 
     void startLoop() 
