@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 55e2172bd13b7994986980ed631ff0db
+guid: 03f1f8700f28b8647ac1be3fd52bc87b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MinotaurMetallic
+    second: {fileID: 2800000, guid: f13551f23189f0142a9bed208a70a589, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MinotaurPainture
+    second: {fileID: 2800000, guid: 849eeff280dbba2429c79b4625ea388f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
