@@ -6,8 +6,11 @@ public class Minotaur : MonoBehaviour
 {
     //Moviment
 
-    [SerializeField] private float _aceleration = 20.0f;
-    [SerializeField] private float _maxSpeed = 2.0f;
+    [SerializeField] private float _aceleration = 0.6f;
+    //[SerializeField] private float _maxSpeed = 2.0f;
+    private int _side = 1;
+
+    [SerializeField] Animator _animator;
 
     private bool _isCharging;
     private bool _isDead;
@@ -29,6 +32,8 @@ public class Minotaur : MonoBehaviour
 
         _rb = GetComponent<Rigidbody>();
         _boxCollider = GetComponent<BoxCollider>();
+        _animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        _animator.speed = 1f;        
     }
 
     void Start() 
@@ -50,16 +55,24 @@ public class Minotaur : MonoBehaviour
 
     void movementRun()
     {
-        if (!_isCharging && !_isDead)
+        if (_side == 1)
         {
-            _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
-
-            if (_rb.velocity.magnitude >= _maxSpeed)
-            {
-                _rb.velocity = _rb.velocity.normalized * _maxSpeed;
-            }
-
+            _rb.velocity = Vector3.right * _aceleration;
         }
+        else if (_side == -1)
+        {
+            _rb.velocity = Vector3.left * _aceleration;
+        }
+        // if (!_isCharging && !_isDead)
+        // {
+        //     _rb.AddForce(transform.forward * _aceleration, ForceMode.Force);
+
+        //     if (_rb.velocity.magnitude >= _maxSpeed)
+        //     {
+        //         _rb.velocity = _rb.velocity.normalized * _maxSpeed;
+        //     }
+
+        // }
     }
 
     //Collisions
@@ -98,8 +111,17 @@ public class Minotaur : MonoBehaviour
     {
         Vector3 _newRotation = transform.rotation.eulerAngles;
         _newRotation *= -1;
+        ChangeSide();
         transform.rotation = Quaternion.Euler(_newRotation);
     }
+    
+    private void ChangeSide()
+    {
+        if (_side == 1)
+            _side = -1;
+        else
+            _side = 1;
+    }    
 
     //State Loops
 
